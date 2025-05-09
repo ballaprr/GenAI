@@ -1,0 +1,135 @@
+What is Generateive AI?
+
+Generative AI generate new data based on training sample. Generative model can generate Image, Text, Audio, Videos etc. data as output
+
+Generative AI is a very huge topics:
+- Generative Image model
+- Generative Language model
+
+Discriminimove model - machien learning model that focuses on modeling the decision boundary between different classes by learning the probability distribution P(y|x) where y represents the target variable and x denotes the input features.
+
+Generative model - Generate new data based on the training samples, given training sample (unstructured data), based on training sample data will generate new data. In GenAI given unstructured data as input, gen AI will try to "understand" this unstructured data, learn the pattern, and generate something from the particular sample I am giving. Output can be text, audio, videos.
+
+Why are generative models required?
+- Understand Complex Pattern from Data: People using unstructured data a lot
+- Content generation: Generate any kinds of content, code, any kids of content. 
+- Build Powerful Application: ChatGpt, Ollama, Claude
+
+Generative AI is a subset of deep learning and Generative models are training on huge amounts data. While training the generative model we don't need to provide a label data. It is not possible when we have a huge amount of data. So, it's just try to see the relationship between the distribution of the data. In Generative AI we give unstructured data to the LLM model for training purpose. 
+
+GAN (general adverseral neural network) - 
+
+What is LLMs?
+Large Language Models (LLMs) are foundational machine learning models that use deep learning algorithms to process and understand natural language. These models are trained on massive amounts of text data to learn patterns and entity relationships in the language. 
+
+It is a language model which is responsible for performing task such as text to text generation, text to image generation and image to text generations. Also knows an multimodal
+
+
+What makes LLM so powerful?
+- In case of LLM, one model can be used for a whole variety of tasks like:
+	Text generation, ChatBot, summarizer, translation, code generation & so on...
+	So, LLM is a subset of Deep Learning & it has some properties merge with Generative AI
+	
+- Train the model for a specific task
+
+End to end Generative AI Pipeline
+Generative AI pipeline is a set of steps followed to build a end to end GenAI software
+- Breaks the problem down into several sub-platforms, then try to develop a step-by-step procedure to solve them. Since langauge processing is involved, we would also list all the forms of text processing needed at each step. This step-by-step processing of text is known as a pipeline. 
+
+Generative AI Pipeline
+- Data acquisition
+- Data Preparation
+- Feature Engineering
+- Modeling
+- Evaluation
+- Deployment
+- Monitoring and model updating
+
+1) Data Acquisition:
+	- Available Data (csv, txt, pdf, docs, xlsx)
+	- Other data (DB, Internet, API, scrapping)
+	- No data (create your won data)
+		- LLM (OpenAI GPT)
+		
+Note: if you have less data then you can perform data augmentation
+Es: Replace with synonyms, I am a Data Scientist -> I am a Data Engineer
+For images you can do image augmentation
+
+You can do a biagram flip:
+I am Rohan
+Rohan is my name
+
+Back transilate:
+Engligh -> Spanish -> Hindi -> Telegu -> English
+Some worlds will be changed, python has libraries that can do backtranslation
+
+Add Additional Noise
+I am a Data Scientist, (I love this job) -> Additional noise
+
+2) Data PreProcessing
+	- Cleanup: HTML, emoji, spelling correction
+	- Basic Preprocessing
+	- Advance preprocessing
+	
+	Basic preprocessing:
+		- Tokenization -> Sentence tokenization or word tokenization
+		
+	Optional preprocessing:
+		- Stop word removal
+		- Steaming -> less used
+		- lamatization more used
+		- punctuation removal
+		- lower case
+		- language detection
+	
+		 [My name is Rohan]
+		 ["My", "name", "is", "Rohan"] <- word level tokenization
+		 
+		 [My name is Rohan. I am a Software Engineer]
+		 ["My name is Rohan", "I am a Software Engineer"] <- sentence level tokenization
+		 
+		 play, played, playing 
+		 - |play -> |sports
+
+	Advanced preprocessing:
+	
+	Input: "Chaplin wrote, directed, and composed the music for most of his films."
+	
+	Tokenizatation with Lemmatization:
+	
+	Chalin write , direct, and compoNNse the music for most of he film .
+	Chaplin wrote, directed, and composed the music for most of his films.
+	
+	POS Tagging: Noun vs Verb vs Adjective
+	
+3) Feature Engineering
+	-> Text Vectorization
+		-> TFIDP
+		-> Bag of word
+		-> world to vec
+		-> one hot encoding
+		-> transformer model
+		
+4) modeling:
+	-> choose different 
+		-> open source LLM (download model on machine, prepare everything, setup environment, and then train model, need a good GPU, then manually deploy on cloud perform)
+			-> Ollama 
+		-> paid model (available in server don't have to download on machine, will train model in server)
+			-> OpenAI
+			
+5) Evaluation:
+	1) Intrisive evaluation -> metrics - Gen AI Engineer
+	2) Extrinsive evaluation -> Deployment 
+
+6) Deployment:
+	1) monitoring retraining
+	
+# common tenum
+
+Image augmentation is a step where augmentations are applied to existing images in your dataset. This process can help improve the ability of your model to generalize and thus perform more effectively or unseen images. 
+1) corpus (entire text)
+2) vocabulary (unique word)
+3) documents (one line)
+4) word (single word)
+
+

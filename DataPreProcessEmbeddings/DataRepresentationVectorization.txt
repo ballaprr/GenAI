@@ -1,0 +1,82 @@
+1) What is feature extraction from text/images
+2) Why we need it? -> Numbers/vectors
+3) Why it is so difficult? (Text)
+4) What is the cone idea
+5) Some techniques.
+
+
+# ML: Tabular Data, csv, xlsx
+
+
+1) One Hot Encoding
+2) Bag of word (BDW)
+
+One Hot Encoding:
+_d1_|___people watch lotr _____
+_d2_|___fans watch lotr _____
+_d3_|___fans write comments__
+_d4_|___lotr write lotr____
+
+
+people | watch | lotr | fans | write | comments
+1         0        0    0        0     0
+0         1        0    0        0     0         
+0         0        1    0        0     0    
+
+d1 = [[1 0 0 0 0],
+     [0 1 0 0 0],
+     [0 0 1 0 0]]
+
+[My name is Rohan] -> Out of Vocabulary Issue (OOV)
+
+Lots of zeros so sparcity problem, unnecessarily increasing computation
+
+Drawbacks:
+1) sparcity
+2) No fixed size
+3) OOV
+4) Not capturing semantic meaning
+
+
+
+Bag of Word:
+                                      people | watch | lotr | write | comments  
+R1 -> _d1_ | people watch lotr           1   |   1   |   1  |   0   |    0   
+R2 -> _d2_ | lotr watch lotr             0   |   1   |   2  |   0   |    0
+R3 -> _d3_ | people write lotr
+R4 -> _d4_ | lotr write comment
+
+Research: (Bow)
+
+sentiment 
+
+This movie is wow
+This movie is amazing, amazing performance
+
+
+* TFIDP <- 
+* word2vec <- 
+# Transformers
+
+
+
+Word 2 Vec:
+
+Fixtures| king | queen | man | women | monkey
+gender  |   1  |   0   |  1  |   0   |    1
+wealth  |   1  |  1    |  0.3|   0.2 |   0
+power   |   1  |   0.7 |  0.3|   0.2 |  0           
+weight  |  0.8 |  0.5  |  0.7|   0.5 |  0.3
+speak   |  1   |   1   |  1  |   1   |  0
+
+
+king = [1  1  1  0.8  1]
+queen = [0 1 0.7 0.5 1]
+man = [1 0.3 0.3 0.7 1]
+women = [0 0.2 0.2 0.5 1]
+monkey = [1 0 0 0.3 0]
+
+
+Another sentence: I am a princess
+
+Transformer based encoding how we extract the features, by backpropogration be able to generate the other features

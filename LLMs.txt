@@ -1,0 +1,34 @@
+What is LLMs?
+
+A large language model is a trained deep learning model that understands and generate text in a human like fashion. 
+
+LLMs are good at Understanding and generating model language 
+
+
+The garden was full of beautiful    flowers
+|      |    |    |   |     |           |
+|      |    |    |   |     |           |
+|      |    |    |   |     |           |
+--------------------------------------LLM
+
+
+It's raining cats and dogs
+
+I have two apples and I eat one, I'm left with-----------
+                                                        |       One
+                                                        |       |
+                                                        |       |
+                                                        |       |
+                                                        |-------PaLM
+
+
+Why we call it Large Language Model?
+
+Because of the size and complexity of the Neural Network as well as the size of the
+dataset that it was trained on.
+
+Researchers started to make these models large and trained on huge datasets
+
+That they started showing impressive results like understanding complex Natural Language and generating
+language and generating language more eloquently than ever. 
+
