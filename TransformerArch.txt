@@ -1,0 +1,128 @@
+https://jalammar.github.io/illustrated-transformer/
+
+Input:                                 Output:
+js suis etudiant -> The Transformer -> I am a student
+
+                        I am a student
+                            |
+                            |
+            Encoders -> Decoders
+                |
+                |
+Input: je suis etudiant
+
+
+Inside Encoder we have more enoder layers
+
+            I am a student
+                 |
+                 |
+Encoder -----> Decoder
+Encoder  |---> Decoder
+Encoder  |---> Decoder
+Encoder  |---> Decoder
+Encoder  |---> Decoder
+Encoder  |---> Decoder
+    |
+    |
+je suis etudiant
+
+
+Encoder:                             Decoder
+                                        Feed Forward
+Feed Forward Neural Network             Encoder-Decoder Attention
+     ^                          --->            ^
+     |                                          |
+Self Attention                          Self=Attention
+
+
+Bringing the Tensors into the Picture
+
+Text to Vector:
+
+x1: [_,_,_,_]           x2: [_,_,_,_s]      x3: [_,_,_,_]
+        Je                      suis             etudiant
+
+
+
+Encoder layer:
+
+    r1: [_,_,_,_]      r2: [_,_,_,_]     r3: [_,_,_,_]
+            ^                 ^                 ^
+            |                 |                 |
+                         Feed Forward
+            ^                 ^                 ^
+            |                 |                 |
+    z1: [_,_,_,_]     z2: [_,_,_,_]      z3: [_,_,_,_]
+            ^                 ^                 ^
+            |                 |                 |
+                       Self-Attention
+            ^                 ^                 ^
+            |                 |                 |
+    x1: [_,_,_,_]    x2: [_,_,_,_]       x3: [_,_,_,_]
+           Je               suis              etudiant
+
+
+After we pass into one encoder layer we pass into the next encoder layer
+
+
+
+Self-Attention at High level:
+
+"The animal didn't cross the street because it was too tired"
+Color Code (1-10)
+
+The_ (10)        The_            
+animal_ (10)     animal_
+didn_ (7)        didn_
+'_ (8)           '_
+t_ (9)           t_
+cross_ (3)       cross_
+the_ (5)         the_
+street_ (5)      street_
+because_ (0)     because_
+it_ (2)          it_ ------> reference
+was_ (0)         was_
+too_ (8)         too_
+tire (3)         tire
+d_ (2)           d_
+
+
+Self-Attention in Detail:
+
+Convert input to embedding representation
+For calculating self attention we create three vectors from each of the encoder's input vectors
+For each word we create a Query vector, Key Vector, and Value vector
+Vectors are created by multiplying the embedding by three matrics during the training process
+
+1) 
+
+Input           Thinking            Machines
+
+Embeddings      X1 [_,_,_,_]        X2 [_,_,_,_]
+
+
+Queries         q1 [_,_,_]          q2 [_,_,_]        Wq = [[_,_,_], [_,_,_], [_,_,_]]     q = X * W
+
+
+Keys            k1 [_,_,_]          k1 [_,_,_]        Wk = [[_,_,_], [_,_,_], [_,_,_]]     k = q * W
+
+
+Values          v1 [_,_,_]          v1 [_,_,_]        Wv = [[_,_,_], [_,_,_], [_,_,_]]     v = k * W
+
+
+2) Calculate a score. We need to score each work of the input sentence against this word. 
+The score determines how much focus to place on other parts of the input sentence as we encode a word at a certain position
+
+Score is calculated by taking the dot product of the query vector with the key vector of the word we're scoring. 
+If we're processing the self-attention for the word in position #1, the first score would be the dot product of q1 and k1. 
+second score would be dot product of q1 and k2. 
+
+
+3 and 4) Devide the scores by 8, (the square root of the dimension of the key vectors). There could be other possible values,
+        the pass into softmax operation. Softmax normalizes the scores so they're all positive and add up to 1. 
+
+        
+
+
+
