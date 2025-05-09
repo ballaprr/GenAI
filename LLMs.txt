@@ -32,3 +32,119 @@ Researchers started to make these models large and trained on huge datasets
 That they started showing impressive results like understanding complex Natural Language and generating
 language and generating language more eloquently than ever. 
 
+Transfer learning -- Using existing model
+
+Large Language models are based on transformer a type of Neural Network 
+
+
+
+encoder:
+decoder:
+
+
+What makes LLM so Powerful?
+
+- In case of LLM, one model can be used for a whole variety of tasks like:
+    Text generation, Chatbot, summarizer, translation, code generation & so on
+
+So, LLM is subset of Deep Learn & it has some properties merge with Generative AI
+
+
+Few milestone in Large Language Model
+
+- Gemini from Google: 
+
+- GPT: GPT stands for "Generative Pre-trained Transformer". The model was developed by OpenAI
+
+- XLM: Cross-lingual Language Model Pretraining by Guillaume Lample, Alexis Conneau
+
+- Llama: It was created by Meta AI
+
+- Megatraon: Megatraon is a large, power transformer developed by the Applied Deep Learning Research team at NVIDIA
+
+- M2M-100: multilingual encode-decoder (seq-to-seq) model researchers at Facebook
+
+
+# https://github.com/eugeneyan/open-llms
+
+
+Transformer Tree:
+
+                   Transformer
+                --Encoder - Decoder--
+                |        TS         |
+                |       BART        |
+    DistilBERT Bert     M2M-100     GPT
+             RoBERTa    BigBird     GPT 2-CTRL
+        XLM    RXLM                 GPT 3
+               ALBERT               GPT Neo-GPT J
+               ELECTRA
+               DeBERTa
+
+
+
+OpenAI Based LLM models
+
+models        Description
+GPT-4         A set of models that can improve on GPT-3.5 and can learn as well as generate natural language or code
+GPT-3.5       A set of models that improve on GOT-3 and can understand as well as generate natural language or code
+GPT based     A set of models without instruction following that can understand as well as generate natural language or code
+Dall-E        A model that can generate and edit images given a natural language prompt 
+Whisper       A model that can convert audio into text
+Embeddings    A set of models that can convert text into numerical from
+Moderation    A fine-tuned model that can detect whether a text may be sensitive or unsafe
+GPT-3 Legacy  A set of models that can understand and generate natural language
+
+Other Open Source models
+- Mistral
+- Llama
+- Gemini
+- Falcon
+- Claude
+- MPT-30B
+- Stablelm
+
+What can LLms be used for:
+- Text Clasification, Generation, Summarization
+- Conversation AI like Chatbot, Question Answering
+- Speech recognition and Speech Identification
+- Spelling Corrector
+
+
+Prompt Designing:
+
+All the text that we feed into an LLM as input is called a prompt and this whole art if known as prompt design, which is about
+figuring out how to write and format prompt text to get LLMs to do what you want
+
+"It's raining cats and"
+
+"I have two appled and I eat one, I', left with"
+
+The appraoch using a single command to get an LLM to take on a behavior is called Zero Shot Learning
+
+"Write me a poem about Ada Lovelace in the style of Shakespeare"
+
+"Explain the Quantum Physics to me like I'm five years old"
+Quatume physics is the study of matter and energy at the most fundamental level. It aims to uncover the properties and behaviors of the
+very building blocks 
+
+
+Few Shot Learning:
+In addition, to just providing an instruction it can be helpful to show the model what you want by adding examples this is called
+few shot learning because we showed the model a few examples 
+
+Like here is a prompt for translating from English to French
+First, we prove an instruction as shown below:
+Convert the text from English to French
+Then we give some examples establishing the text pattern
+
+Ex: Convert the text from Enligh to French 
+Context:
+Peppermint: menthe poivree
+Desert cactus: Cactus du Desert
+Lipstick: Rouge a levres
+
+Output:
+Orange Juice: du jus d'Orange
+Sparkling water: Eau gazeuse
+
