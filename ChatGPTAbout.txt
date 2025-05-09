@@ -1,0 +1,56 @@
+How ChatGPT was trained?
+
+ChatGPT is not a model, it's an application using an LLM
+
+Internally using a LLM which is gpt-3.5 or gpt-4
+It has trained on a large amount of data which is available all over the internet.
+
+1) Generative pre-training
+2) Supervised fine-tuning
+3) Reinforcement learning
+
+
+When you are giving a response, you are using an OpenAI API key, sending a request to the model
+
+
+Inernet text data, Documents text data
+            |
+            |
+Stage 1 - Generattive Pre-Training          The base model (GPT) that was trained on a bunch of stuff from the internet
+            |                              for a whole bunch of different things by using the Transformer Architecture
+        Base GPT model  
+            |
+Stage 2 - Supervised Fine tuning            Next, with the human AI trainers, you get to have conversations where they play
+            (SFT)                           both sides - you and an AI assistant    
+            |
+    Fine-tuned ChatGPT model
+            |
+Stage 3 - Reinforcement learning            Next, let's take a model to the next level by optimizing it even more with Reinforcement 
+through human feedback (RLHG)               Learning by training it against a reward model.
+
+            |
+            |
+        ChatGPT model
+
+
+
+
+Generative Pre-Training:
+Internet text data, Documents text data -> Transformer -> Creates -> Base GPT Model -----reality -----> Text Summary, Sentiment Analysis, Sentence Completion, translation
+                                                                                    |
+                                                                                    |----expectation----> Chat and conversation
+
+
+Supervised Fine-Tuning (SFT):
+
+
+Request     Response 1
+Request     Response 2   -----> Base GPT Model  -----> SFT ChatGPT Model
+Request     Response 3                |
+                                      |
+                                 Optimizer-->SGD
+
+
+Reinforcement Learning through Human 
+Feedback (RLHF):
+
