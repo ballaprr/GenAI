@@ -122,7 +122,48 @@ second score would be dot product of q1 and k2.
 3 and 4) Devide the scores by 8, (the square root of the dimension of the key vectors). There could be other possible values,
         the pass into softmax operation. Softmax normalizes the scores so they're all positive and add up to 1. 
 
-        
 
 
 
+
+
+
+
+
+
+Representing the order of the sequence using positional encoding
+
+                    Encoder #1   -> Decoder #1
+                        ^
+                        |
+                    Encoder #0   -> Decoder #0
+
+Embedding with      
+time signal       x1 [_,_,_,_]    x2 [_,_,_,_]   x3 [_,_,_,_]
+                        =               =               =
+Positional        t1 [_,_,_,_]    t2 [_,_,_,_]   t3 [_,_,_,_]
+encoding                +               +               +
+
+Embeddings        x1 [_,_,_,_]    x2 [_,_,_,_]   x3 [_,_,_,_]
+
+Input                   je          suis        etudiant
+
+
+If we assumed the embedding has dimensionality of 4, the acutal positional encodings would look like:
+Positional Encoding    [0,0,1,1]      [0.84, 0.0001, 0.54, 1]       [0.91, 0.0002, -0.42, 1]
+
+Embeddings           x1 [_,_,_,_]          x2 [_,_,_,_]                    x3 [_,_,_,_]
+
+Input                       je                    suis                          etudiant
+
+
+Encoder and Decoder Attention
+
+What ever output we're getting from the Encoder, the output we're passing into the Decoder 
+but before passing the output we'd multiple the K and V and pass into the decoder 
+Pass into Linear + Softmax
+
+Steps repeat until a special symbol is reached indicating the tranformer decoder has completed its output. 
+The output of each step is fed to the bottom decoder in the next step, and the decoders bubble up their decoding results 
+just like the encoders did. A just like we did with the encoder inputs, we embed and add positional encoding to those docker 
+inputs to indicate the position of each word. 
