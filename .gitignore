@@ -1,1 +1,5 @@
 embedding2-env/
+.env
+/results/
+fine-tuned-model/
+fine-tuned-tokenizer/
