@@ -1,0 +1,13 @@
+Hugging Face ---> Transformers
+
+1) Pipeline
+
+2) NLP Tasks                                                   Open LLM
+                                                                    |
+3) Tokenization                                                     |
+                                                                paid -> openAI
+4) Datasets and Spaces
+
+5) Fine tuning LLM 
+
+5) Projects --> 
